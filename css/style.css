@@ -916,6 +916,7 @@ body.popup-show::after {
 }
 .form-filter__btns {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .label {
@@ -1106,6 +1107,30 @@ body.popup-show::after {
   }
 }
 
+@media (min-width: 87.1875em) {
+  #popup__would .popup__content {
+    padding: 3.4375rem;
+  }
+}
+@media (min-width: 20em) and (max-width: 87.1875em) {
+  #popup__would .popup__content {
+    padding: clamp( 2.5rem , 2.2209302326rem  +  1.3953488372vw , 3.4375rem );
+  }
+}
+@media (max-width: 20em) {
+  #popup__would .popup__content {
+    padding: 2.5rem;
+  }
+}
+#popup__would .popup__title {
+  font-size: 1.25rem;
+}
+#popup__would .exit__btn {
+  background-color: transparent;
+  border: 1px solid #5b3bfc;
+  color: #000000;
+}
+
 .spollers {
   display: grid;
   gap: 15px;
@@ -1183,8 +1208,8 @@ body.popup-show::after {
   }
 }
 .header__logo {
-  height: 8.125rem;
-  width: 8.125rem;
+  height: 9.375rem;
+  width: 9.375rem;
   margin-right: 0.3125rem;
 }
 .header__logo img {
@@ -1210,12 +1235,12 @@ body.popup-show::after {
 }
 @media (min-width: 87.5em) {
   .header__btn {
-    margin-left: 27.8125rem;
+    margin-left: 26.5625rem;
   }
 }
 @media (min-width: 29.875em) and (max-width: 87.5em) {
   .header__btn {
-    margin-left: clamp( 0.625rem , -13.470037961rem  +  47.1800433839vw , 27.8125rem );
+    margin-left: clamp( 0.625rem , -12.8219902386rem  +  45.010845987vw , 26.5625rem );
   }
 }
 @media (max-width: 47.99875em) {
@@ -1452,32 +1477,32 @@ body.popup-show::after {
 
 @media (min-width: 87.1875em) {
   .page-top {
-    padding-top: 1.875rem;
+    padding-top: 0.9375rem;
   }
 }
 @media (min-width: 20em) and (max-width: 87.1875em) {
   .page-top {
-    padding-top: clamp( 0.9375rem , 0.6584302326rem  +  1.3953488372vw , 1.875rem );
+    padding-top: clamp( 0.00000625rem , -0.279061657rem  +  1.3953395349vw , 0.9375rem );
   }
 }
 @media (max-width: 20em) {
   .page-top {
-    padding-top: 0.9375rem;
+    padding-top: 0.00000625rem;
   }
 }
 @media (min-width: 87.1875em) {
   .page-top {
-    padding-bottom: 3.125rem;
+    padding-bottom: 1.875rem;
   }
 }
 @media (min-width: 20em) and (max-width: 87.1875em) {
   .page-top {
-    padding-bottom: clamp( 1.875rem , 1.5029069767rem  +  1.8604651163vw , 3.125rem );
+    padding-bottom: clamp( 0.00000625rem , -0.5581314244rem  +  2.7906883721vw , 1.875rem );
   }
 }
 @media (max-width: 20em) {
   .page-top {
-    padding-bottom: 1.875rem;
+    padding-bottom: 0.00000625rem;
   }
 }
 .page-top__body {
@@ -1488,17 +1513,17 @@ body.popup-show::after {
 }
 @media (min-width: 87.1875em) {
   .page-top__body {
-    padding-bottom: 9.375rem;
+    padding-bottom: 3.125rem;
   }
 }
 @media (min-width: 20em) and (max-width: 87.1875em) {
   .page-top__body {
-    padding-bottom: clamp( 3.125rem , 1.2645348837rem  +  9.3023255814vw , 9.375rem );
+    padding-bottom: clamp( 1.25rem , 0.6918604651rem  +  2.7906976744vw , 3.125rem );
   }
 }
 @media (max-width: 20em) {
   .page-top__body {
-    padding-bottom: 3.125rem;
+    padding-bottom: 1.25rem;
   }
 }
 @media (max-width: 61.99875em) {
@@ -1668,7 +1693,7 @@ body.popup-show::after {
   background: #00aff5;
   border: 2px solid transparent;
   box-shadow: 0px 7px 30px rgba(0, 175, 245, 0.3);
-  margin-bottom: 1.875rem;
+  margin-bottom: 1.25rem;
   transition: box-shadow 0.3s ease 0s;
 }
 @media (any-hover: hover) {
@@ -1710,6 +1735,35 @@ body.popup-show::after {
 }
 .skyscaner__table::-webkit-scrollbar {
   width: 0;
+}
+.skyscaner .dropdown__content {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 20px;
+  overflow: hidden;
+  min-width: 16.875rem;
+  z-index: 999;
+  background-color: #fff;
+  left: -5px;
+  border-radius: 1.5625rem;
+  transition: all 0.3s ease 0s;
+}
+.skyscaner .spollers__dropdown {
+  display: block;
+  position: relative;
+}
+.skyscaner .spollers__dropdown:hover .dropdown__content {
+  opacity: 1;
+  visibility: visible;
+  overflow: visible;
+}
+.skyscaner .dropdown__item {
+  padding: 0.3125rem;
+  font-size: 1rem;
+  color: #14007a;
+  display: block;
+  cursor: pointer;
 }
 
 .skyscaner-header {
@@ -1904,7 +1958,7 @@ body.popup-show::after {
   border-right: 5px solid transparent;
   border-top: 7px solid rgba(203, 206, 209, 0.5);
   position: absolute;
-  top: -43px;
+  top: -39px;
   right: -35px;
   transition: transform 0.3s ease 0s;
   transition: border 0.3s ease 0s;
@@ -1918,7 +1972,7 @@ body.popup-show::after {
 
 .table-skyscaner__row {
   display: flex;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4375rem;
   background: #f5f5f5;
   border-radius: 50px;
   align-items: center;
@@ -1929,6 +1983,7 @@ body.popup-show::after {
   padding: 0;
   border-radius: 25px;
   background-color: transparent;
+  margin-bottom: 0.3125rem;
 }
 .table-skyscaner__row-item {
   width: 6.625rem;
@@ -2042,7 +2097,7 @@ body.popup-show::after {
 }
 .spollers__inner {
   display: flex;
-  padding: 3.125rem 3.125rem 1.25rem 3.125rem;
+  padding: 0.3125rem 3.125rem 0.3125rem 3.125rem;
 }
 .spollers__items {
   display: grid;
@@ -2090,6 +2145,7 @@ body.popup-show::after {
 }
 .spollers__text {
   text-align: center;
+  color: #14007a;
 }
 .spollers__grafik {
   display: grid;
@@ -2097,6 +2153,7 @@ body.popup-show::after {
   gap: 1.875rem;
   padding-left: 3.125rem;
 }
+
 .grafik-item {
   background: #f5f5f5;
   border-radius: 15px;
@@ -2136,7 +2193,13 @@ body.popup-show::after {
   padding: 0.9375rem 0.9375rem;
 }
 .skyscaner__compact .spollers__btn {
-  top: -39px;
+  top: -33px;
+}
+.skyscaner__compact .table-skyscaner__row {
+  margin-bottom: 0.4375rem;
+}
+.skyscaner__compact .table-skyscaner__row._spoller-init {
+  margin-bottom: 0.3125rem;
 }
 
 .defiscaner {
@@ -2168,17 +2231,17 @@ body.popup-show::after {
 }
 @media (min-width: 87.1875em) {
   .defiscaner-header {
-    margin-bottom: 3.125rem;
+    margin-bottom: 1.875rem;
   }
 }
 @media (min-width: 20em) and (max-width: 87.1875em) {
   .defiscaner-header {
-    margin-bottom: clamp( 1.5625rem , 1.0973837209rem  +  2.3255813953vw , 3.125rem );
+    margin-bottom: clamp( 0.9375rem , 0.6584302326rem  +  1.3953488372vw , 1.875rem );
   }
 }
 @media (max-width: 20em) {
   .defiscaner-header {
-    margin-bottom: 1.5625rem;
+    margin-bottom: 0.9375rem;
   }
 }
 .defiscaner-header__btn {
@@ -2266,7 +2329,7 @@ body.popup-show::after {
 @media (max-width: 61.99875em) {
   .defiscaner-btn__trigger {
     position: static;
-    margin: 1.25rem auto 0 auto;
+    margin: 1.25rem auto 1.25rem auto;
   }
 }
 .defiscaner__table {
@@ -2278,7 +2341,7 @@ body.popup-show::after {
 
 .table-defiscaner__row {
   display: flex;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.4375rem;
   background: #f5f5f5;
   border-radius: 50px;
   align-items: center;
@@ -2289,12 +2352,17 @@ body.popup-show::after {
   padding: 0;
   border-radius: 25px;
   background-color: transparent;
+  margin-bottom: 0.3125rem;
+}
+.table-defiscaner__row._spoller-init .spollers__item {
+  width: 100%;
+  font-size: 1.875rem;
 }
 .table-defiscaner__row-item {
   width: 7.375rem;
   text-align: center;
   font-weight: 400;
-  padding: 0.625rem;
+  padding: 0.3125rem 0.625rem;
 }
 .table-defiscaner__row-item.table-defiscaner__item--big {
   width: 11.875rem;
